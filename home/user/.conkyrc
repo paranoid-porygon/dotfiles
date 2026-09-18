@@ -1,0 +1,97 @@
+conky.config = {
+-- conky configuration
+--
+-- The list of variables has been removed from this file in favour
+-- of keeping the documentation more maintainable.
+-- Check http://conky.sf.net for an up-to-date-list.
+--
+-- For ideas about how to modify conky, please see:
+-- http://conky.sourceforge.net/variables.html
+--
+-- For help with conky, please see:
+-- http://conky.sourceforge.net/documentation.html
+--
+-- Enjoy! :)
+--##############################################
+--# Settings
+--##############################################
+	background = true,
+	use_xft = true,
+--	font = 'Liberation Sans:size=9',
+	font = 'Monospace:size=11',
+	xftalpha = 1,
+	update_interval = 1.0,
+	total_run_times = 0,
+	own_window = true,
+	own_window_transparent = false,
+	own_window_type = 'normal',  --'desktop',
+	own_window_argb_visual = true,
+	own_window_argb_value = 128,
+	--own_window_class = 'Conky',
+	own_window_colour = '#000',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	double_buffer = true,
+	minimum_width = 200, minimum_height = 200,
+	maximum_width = 400,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = false,
+	default_color = '#AAFF00',
+	default_shade_color = '#999900',
+	default_outline_color = '#00FF00',
+	alignment = 'top_right',
+	gap_x = 12,
+	gap_y = 56,
+	no_buffers = true,
+	uppercase = false,
+	cpu_avg_samples = 2,
+	override_utf8_locale = false,
+--##############################################
+--#  Output
+--##############################################
+};
+
+conky.text = [[
+S Y S T E M    I N F O
+${hr}
+Host:$alignr$nodename
+Uptime:$alignr$uptime
+RAM:$alignr$mem/$memmax
+Swap usage:$alignr$swap/$swapmax
+Disk usage:$alignr${fs_used /}/${fs_size /}
+CPU usage:$alignr${cpu cpu0}%
+CPU temp:$alignr${hwmon 0 temp 1}C
+Fan speed:$alignr${execi 10 sensors | grep -i 'fan' | awk '{print $2, $3}'}
+
+S H O R T C U T    K E Y S
+${hr}
+Super+Space$alignr Run Command
+Super+d$alignr dmenu
+Super+Return$alignr Terminal
+Alt+F2$alignr Main Menu
+Alt+F3$alignr Alt Menu
+Super+Tab$alignr Client Menu
+Super+e$alignr File Manager
+#Super+e$alignr Editor
+Super+m$alignr Media Player
+Super+w$alignr Web Browser
+Ctrl+Shift+Esc$alignr Task Manager
+Super+Esc$alignr Lock Screen
+Super+Shift+Esc$alignr Hibernate
+Super+v$alignr Volume Control
+PrtSc$alignr Screenshot
+
+N A V I G A T I O N    K E Y S
+${hr}
+Super+{num}$alignr Switch to Desktop {num}
+Super+Ctrl+{arrow}$alignr Switch to Desktop
+Super+{hjkl}$alignr Switch Active Window
+Alt+Tab$alignr Next Window
+Super+{arrow}$alignr Snap Window
+Super+f$alignr Maximize Window
+Shift+Super+{num}$alignr Send Window to Desktop
+Shift+Super+{arrow}$alignr Send Window to Desktop
+Shift+Super+q$alignr Close Window
+Super+0$alignr Show Desktop
+]];
