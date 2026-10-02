@@ -35,3 +35,37 @@ xscreensaver.Dialog.shadowThickness:    2
 xscreensaver.passwd.thermometer.foreground:  #101010
 xscreensaver.passwd.thermometer.background:  #2E2E2E
 xscreensaver.passwd.thermometer.width:       8
+
+!URxvt Colorscheme
+
+URxvt*background: Black
+URxvt*foreground: #FFC800
+URxvt*colorUL: cyan
+URxvt*underlineColor: cyan
+
+!! URxvt Appearance
+
+URxvt.geometry: 92x24
+!URxvt.internalBorder: 24
+URxvt.cursorBlink: true
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+!URxvt.depth: 24
+
+!!! Font
+URxvt.font: xft:Terminess Nerd Font Mono:size=12
+
+!!URxvt extensions
+
+URxvt.perl-ext-common: tabbed,default,clipboard,url-select,keyboard-select
+URxvt.copyCommand: xclip -i -selection clipboard
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.pasteCommand: xclip -o -selection clipboard
+URxvt.keysym.M-C-v: perl:clipboard:paste
+!URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+
+URxvt.urlLauncher: w3m
+URxvt.underlineURLs: true
+URxvt.urlButton: 1
